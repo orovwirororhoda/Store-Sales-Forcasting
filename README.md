@@ -12,16 +12,21 @@ Kaggle Competition: https://www.kaggle.com/competitions/store-sales-time-series-
 
 ## How to Download Data:
 
-1. Install Kaggle API: pip install kaggle
-2. Set up Kaggle credentials (download kaggle.json from your Kaggle account settings)
-3. Download data using one of these methods:
-      Command line: kaggle competitions download -c store-sales-time-series-forecasting
-      Python code:
-        import kaggle
-        from kaggle.api.kaggle_api_extended import KaggleApi
-        api = KaggleApi()
-        api.authenticate()
-        api.competition_download_files('store-sales-time-series-forecasting', path='./data')
+This repo includes `test.csv`, `stores.csv`, `oil.csv`, `holidays_events.csv`, and other small files in `./data/`. **`train.csv` is not on GitHub** (over 100 MB). After cloning, get the full dataset as follows:
+
+1. **Install Kaggle API:** `pip install kaggle`
+2. **Set up credentials:** Place your `kaggle.json` (from [Kaggle Account → API](https://www.kaggle.com/settings)) in `~/.kaggle/` (Windows: `C:\Users\<you>\.kaggle\`).
+3. **Download and unzip** (from the project root):
+   ```bash
+   kaggle competitions download -c store-sales-time-series-forecasting -p ./data
+   cd data && unzip store-sales-time-series-forecasting.zip && cd ..
+   ```
+   Or in PowerShell:
+   ```powershell
+   kaggle competitions download -c store-sales-time-series-forecasting -p ./data
+   Expand-Archive -Path .\data\store-sales-time-series-forecasting.zip -DestinationPath .\data -Force
+   ```
+4. **Optional – Python:** `api.competition_download_files('store-sales-time-series-forecasting', path='./data')` (then unzip the downloaded file in `./data`).
 
 ## Key Tasks:
 
