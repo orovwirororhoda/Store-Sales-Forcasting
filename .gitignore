@@ -1,0 +1,6 @@
+# Kaggle data (train.csv > 100MB; download with: kaggle competitions download -c store-sales-time-series-forecasting -p ./data)
+data/train.csv
+data/*.zip
+
+# Plot outputs (optional)
+plots/
